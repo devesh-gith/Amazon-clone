@@ -14,9 +14,9 @@ import { loadStripe } from "@stripe/stripe-js";
 const stripePromise = loadStripe(process.env.stripe_public_key);
 
 function checkout() {
+  const { data: session } = useSession();
   const items = useSelector(selectItems);
   const total = useSelector(selectTotal);
-  const { data: session } = useSession();
 
   const checkoutSessionItems = async () => {
     const stripe = await stripePromise;
@@ -42,6 +42,7 @@ function checkout() {
         <div className="flex-grow shadow-sm">
           <Image
             src="https://links.papareact.com/ikj"
+            alt="img"
             height={250}
             width={1050}
             objectFit="contain"

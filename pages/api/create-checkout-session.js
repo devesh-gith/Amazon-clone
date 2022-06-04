@@ -1,6 +1,6 @@
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 
-export default async (req, res) => {
+const authorization = async (req, res) => {
   const { items, email } = req.body;
 
   console.log(items);
@@ -36,3 +36,5 @@ export default async (req, res) => {
 
   res.status(200).json({ id: session.id });
 };
+
+export default authorization;

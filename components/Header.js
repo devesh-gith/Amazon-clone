@@ -25,6 +25,7 @@ function Header() {
             width={130}
             height={35}
             objectFit="contain"
+            alt="image"
             className="cursor-pointer "
             onClick={() => router.push("/")}
           />

@@ -45,7 +45,7 @@ function CheckoutProducts({
           {Array(rating)
             .fill()
             .map((_, i) => (
-              <StarIcon className="h-5" />
+              <StarIcon key={i} className="h-5" />
             ))}
         </div>
 

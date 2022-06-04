@@ -30,7 +30,7 @@ const fulFillOrders = async (session) => {
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 const endservicepoint = process.env.STRIPE_SIGNING_KEY;
 
-export default async (req, res) => {
+const permission = async (req, res) => {
   if (req.method === "POST") {
     const requestBuffer = await buffer(req);
     const playload = requestBuffer.toString();
@@ -63,3 +63,5 @@ export const config = {
     externalResolver: true,
   },
 };
+
+export default permission;
